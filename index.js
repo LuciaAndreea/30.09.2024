@@ -86,3 +86,57 @@ console.log("obj1 === obj2", obj1 === obj2);
 const obj3 = {a:1};
 const obj4 = obj3;
 console.log("obj3 === obj4", obj3 ===obj4);
+
+//JAVASCRIPT DATE
+
+const now = new Date();
+console.log(now);
+
+const yesterday = new Date("2024-09-30");
+console.log(yesterday);
+
+//Date methods
+//accesarea proprietatilor unui obiect Data
+
+console.log("not.getDate()",now.getDate()); //returneaza ziua de pe obiectul date
+console.log("now.getDay()",now.getDay());  //returneaza ziua din saptamana
+console.log("now.getFullYear()",now.getFullYear());
+console.log("now.getMonth()",now.getMonth()); //returneaza indexul corespunzator lunii intr-un array de 12 obiecte
+
+//setarea proprietatilor unui obiect Date
+yesterday.setFullYear(2021);
+console.log("yesterday: ",yesterday);
+yesterday.setMonth(7);
+console.log(yesterday);
+yesterday.setDate(29);
+console.log(yesterday);
+
+//adaugarea de zile intr-un obiect date
+
+yesterday.setDate(yesterday.getDate()+2);
+console.log(yesterday);
+
+const difference = now - yesterday;
+console.log("difference: ",difference);
+
+//formatarea unei date
+
+const year = now.getFullYear();
+const month = now.getMonth();
+const day = now.getDate();
+const weekDay = now.getDay();
+const hour = now.getHours();
+const minutes = now.getMinutes();
+
+const months = ["January" , "February" , "March" , "April" , "May" 
+    , "June" , "July" , "August" , "September", "October","November" , "December"];
+const weekDays = ["Sunday" , "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday" , "Saturday" ];
+
+const formattedDate = `Year ${year} , month ${months[month]} , day ${day} , ${weekDays[weekDay]} , time: ${hour}:${minutes}`;
+console.log(formattedDate);
+
+const newDate = new Date();
+const timeStamp = newDate.getTime();
+console.log(timeStamp);
+const fromTimeStamp = new Date(timeStamp - 500000);
+console.log(fromTimeStamp);
